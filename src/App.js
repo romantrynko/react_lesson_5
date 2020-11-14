@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import { MyProvider } from './contextService';
 import Parent from './Parent';
 import UserService from './UserService';
 
@@ -17,7 +18,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
+      <MyProvider value={'hello'}>
         <Parent/>
+      </MyProvider>
       </div>
     );
   }

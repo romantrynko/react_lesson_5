@@ -1,20 +1,19 @@
 import React, { Component } from 'react'
+import { MyConsumer } from './contextService';
 
 export default class Child extends Component {
     render() {
-        const {users} = this.props;
+        // const { users } = this.props;
         return (
             <div>
-            {
-                users.map(user => (
-                    <div>
-                        {user.name}
-                    </div>
-                ))
-
-            }
-
-        </div>
+                <MyConsumer>
+                {
+                    (value) => {
+                        return (<div>{value}</div>)
+                    }
+                }
+                </MyConsumer>
+            </div>
         )
     }
 }
